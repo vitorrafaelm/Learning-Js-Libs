@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+    <title>ChartJs</title>
+</head>
+<body>
+    <div style="width: 500px; height: 250px;"> 
+        <canvas id="myChart" width="400" height="400">
+
+        </canvas>
+    </div>
+
+    <script>
+        let ctx = document.getElementById('myChart'); 
+        let myChart = new Chart(ctx, {
+            type: 'line', 
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'], 
+                datasets: [
+                    {
+                        label: "Number of sales", 
+                        data: [10, 20, 30, 15, 20, 9], 
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 182, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)',
+                        ], 
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 182, 255, 1)',
+                            'rgba(255, 159, 64, 1)',
+                        ], 
+                        borderWidth: 1
+                    }
+                ]
+            }, 
+            options: {
+                title: {
+                    text: 'Sales Forecast', 
+                    display: true
+                },
+                scales: {
+                    yAxes: [
+                        {
+                            ticks: {
+                                beginAtZero: true
+                            }
+                        }
+                    ]
+                }
+            }
+        }); 
+    </script>
+    
+</body>
+</html>
+
+<!--
+    O objeto new Chart é quem vai criar o gráfico, ele receve vários parâmetros. 
+    labels - É o titulo de cada barra
+    dataset é o conjunto de dados que eu quero que apareça no meu gráfico
+-->
